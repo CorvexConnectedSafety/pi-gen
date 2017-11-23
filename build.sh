@@ -129,6 +129,17 @@ if [ -z "${IMG_NAME}" ]; then
 	exit 1
 fi
 
+if [ -z "${GW_PASS}" ]; then
+	echo "GW_PASS not set" 1>&2
+	exit 1
+fi
+
+if [ -z "${GW_SCRIPTS}" ]; then
+	echo "GW_SCRIPTS not set" 1>&2
+	exit 1
+fi
+
+
 export USE_QEMU=${USE_QEMU:-0}
 export IMG_DATE=${IMG_DATE:-"$(date +%Y-%m-%d)"}
 

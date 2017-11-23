@@ -1,0 +1,18 @@
+autossh
+git
+subversion
+vim-nox
+cpanminus
+apache2 libapache2-mod-perl2
+mariadb-client libmariadb-client-lgpl-dev libmariadb2
+dnsmasq
+hostapd
+inotify-tools
+libjson-perl
+libjson-xs-perl
+libdata-uuid-perl
+liblog-log4perl-perl
+libcgi-pm-perl
+libconfig-tiny-perl
+libhash-merge-perl
+nodejs
