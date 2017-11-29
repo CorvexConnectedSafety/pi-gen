@@ -1,0 +1,2 @@
+*/5 * * * * root /var/www/html/scripts/tools/syncObjects.sh > /dev/null 2>&1
+*/5 * * * * root /var/www/html/scripts/tools/syncApp.sh > /dev/null 2>&1
