@@ -3,7 +3,7 @@ git
 subversion
 vim-nox
 cpanminus
-apache2 libapache2-mod-perl2
+apache2 libapache2-mod-perl2 libapache2-mod-dnssd
 mariadb-client libmariadb-client-lgpl-dev libmariadb2
 dnsmasq
 hostapd
@@ -16,3 +16,4 @@ libcgi-pm-perl
 libconfig-tiny-perl
 libhash-merge-perl
 nodejs
+lsyncd
