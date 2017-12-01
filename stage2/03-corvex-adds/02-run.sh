@@ -9,6 +9,7 @@ mkdir -p ${ROOTFS_DIR}/var/www/html/scripts
 cp -r ${GW_SCRIPTS}/* ${ROOTFS_DIR}/var/www/html/scripts
 
 on_chroot << EOF
+timedatectl set-timezone "America/Chicago"
 a2enmod rewrite
 a2enmod cgi
 cpanm JSON::DWIW
