@@ -7,6 +7,7 @@ sed ${ROOTFS_DIR}/etc/avahi/avahi-daemon.conf -i -e "s|workstation=no|workstatio
 sed ${ROOTFS_DIR}/etc/hosts -i -e "s|raspberrypi|CorvexGW01|"
 sed ${ROOTFS_DIR}/etc/hostname -i -e "s|raspberrypi|CorvexGW01|"
 
+install -m 755 files/60-corvex.conf ${ROOTFS_DIR}/etc/sysctl.d/
 install -m 755 files/corvex ${ROOTFS_DIR}/etc/init.d/
 install -m 755 files/crontab ${ROOTFS_DIR}/etc/cron.d/corvex
 install -m 440 files/sudo ${ROOTFS_DIR}/etc/sudoers.d/020_corvex-nopasswd
@@ -20,9 +21,6 @@ fi
 echo "corvex:"$GW_PASS | chpasswd
 echo "pi:"$GW_PASS | chpasswd
 adduser corvex sudo
-update-rc.d ssh enable
-update-rc.d corvex defaults
-update-rc.d corvex enable
 EOF
 
 install -m 600 userfiles/tunnel_key ${ROOTFS_DIR}/home/corvex

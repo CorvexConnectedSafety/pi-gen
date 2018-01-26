@@ -17,3 +17,9 @@ libconfig-tiny-perl
 libhash-merge-perl
 nodejs
 lsyncd
+apt-transport-https
+ca-certificates
+curl
+software-properties-common
+imagemagick
+libwebsockets-dev

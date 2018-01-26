@@ -10,8 +10,12 @@ cp -r ${GW_SCRIPTS}/* ${ROOTFS_DIR}/var/www/html/scripts
 
 on_chroot << EOF
 timedatectl set-timezone "America/Chicago"
+update-rc.d ssh enable
+update-rc.d corvex defaults
+update-rc.d corvex enable
+update-rc.d rpimonitord enable
 a2enmod rewrite
 a2enmod cgi
-cpanm JSON::DWIW
+cpanm -n JSON::DWIW
 EOF
 
