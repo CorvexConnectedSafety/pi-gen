@@ -36,7 +36,8 @@ install -m 644 files/interfaces ${ROOTFS_DIR}/etc/network/interfaces.d/
 
 on_chroot apt-key add - < files/nodesource.gpg.key
 on_chroot << EOF2
-apt-get update
+rm -f /etc/apt/apt.conf.d/90proxy
+curl -sSL https://get.docker.com | sh
 EOF2
 
 

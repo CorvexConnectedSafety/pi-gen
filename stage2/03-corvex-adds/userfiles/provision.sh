@@ -9,15 +9,16 @@ configsrc=/home/corvex/config.tmpl
 
 subID=$1
 locID=$2
+gwName=$3
 
 if [ -z "$subID" -o -z "$locID" ]
 then
-    echo "Usage: provision.sh subscriberID locationID"
+    echo "Usage: provision.sh subscriberID locationID gatewayName"
     exit 1
 fi
 
-sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/" < $inisrc > $initarget
-sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/" < $configsrc > $configtarget
+sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/"  -e "s/GATEWAYNAME/$gwName" < $inisrc > $initarget
+sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/" -e "s/GATEWAYNAME/$gwName" < $configsrc > $configtarget
 
 chmod +x $configtarget
 

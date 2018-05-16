@@ -23,3 +23,10 @@ curl
 software-properties-common
 imagemagick
 libwebsockets-dev
+apt-transport-https ca-certificates dirmngr
+libssl-dev sqlite3 
+libsqlite3-dev 
+libevent-dev 
+libboost-dev 
+nagios-plugins-basic
+nsca-client
