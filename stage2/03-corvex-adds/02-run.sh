@@ -24,6 +24,3 @@ EOF
 
 sed ${ROOTFS_DIR}/etc/apache2/mods-enabled/mpm_prefork.conf  -i -e "s|MaxRequestWorkers.*|MaxRequestWorkers  50|"
 sed ${ROOTFS_DIR}/etc/apache2/mods-enabled/mpm_prefork.conf  -i -e "s|MaxConnectionsPerChild.*|MaxConnectionsPerChild  100|"
-
-# set up to use a proxy
-install -m 644 files/90proxy ${ROOTFS_DIR}/etc/apt/apt.conf.d

@@ -9,6 +9,7 @@ sed ${ROOTFS_DIR}/etc/hostname -i -e "s|raspberrypi|CorvexGW01|"
 
 install -m 755 files/60-corvex.conf ${ROOTFS_DIR}/etc/sysctl.d/
 install -m 755 files/corvex ${ROOTFS_DIR}/etc/init.d/
+install -m 755 files/corvex.service ${ROOTFS_DIR}/etc/avahi/services
 install -m 755 files/crontab ${ROOTFS_DIR}/etc/cron.d/corvex
 install -m 440 files/sudo ${ROOTFS_DIR}/etc/sudoers.d/020_corvex-nopasswd
 
@@ -30,13 +31,13 @@ install -m 644 userfiles/config.tmpl ${ROOTFS_DIR}/home/corvex
 
 install -m 755 userfiles/provision.sh ${ROOTFS_DIR}/home/corvex
 install -m 755 userfiles/tunnel.sh ${ROOTFS_DIR}/home/corvex
+install -m 755 userfiles/90proxy ${ROOTFS_DIR}/home/corvex
 
 install -m 644 files/nodesource.list ${ROOTFS_DIR}/etc/apt/sources.list.d/
 install -m 644 files/interfaces ${ROOTFS_DIR}/etc/network/interfaces.d/
 
 on_chroot apt-key add - < files/nodesource.gpg.key
 on_chroot << EOF2
-rm -f /etc/apt/apt.conf.d/90proxy
 curl -sSL https://get.docker.com | sh
 EOF2
 

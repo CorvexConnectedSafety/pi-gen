@@ -3,8 +3,8 @@ git
 subversion
 vim-nox
 cpanminus
-apache2 libapache2-mod-perl2 libapache2-mod-dnssd
-mariadb-client libmariadb-client-lgpl-dev libmariadb2
+apache2 libapache2-mod-perl2 
+mariadb-server mariadb-client libmariadb-client-lgpl-dev libmariadb2
 dnsmasq
 hostapd
 inotify-tools
@@ -30,3 +30,6 @@ libevent-dev
 libboost-dev 
 nagios-plugins-basic
 nsca-client
+ppp
+wiringpi
+minicom
