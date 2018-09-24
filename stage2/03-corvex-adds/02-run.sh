@@ -20,6 +20,8 @@ a2dismod mpm_event
 a2enmod mpm_prefork
 cpanm -n JSON::DWIW
 cpanm -n Net::Address::IPv4::Local
+mkdir /var/www/html/scripts/logs
+chown www-data:www-data /var/www/html/scripts/logs
 EOF
 
 sed ${ROOTFS_DIR}/etc/apache2/mods-enabled/mpm_prefork.conf  -i -e "s|MaxRequestWorkers.*|MaxRequestWorkers  50|"

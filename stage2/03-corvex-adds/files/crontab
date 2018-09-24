@@ -1,9 +1,9 @@
 */5 * * * * root /var/www/html/scripts/tools/syncObjects.sh > /dev/null 2>&1
 */5 * * * * root /var/www/html/scripts/tools/syncApp.sh > /dev/null 2>&1
-*/5 * * * * root /var/www/html/scripts/tools/passive_check_disk.pl > /dev/null 2>&1
-*/5 * * * * root /var/www/html/scripts/tools/passive_check_http.pl > /dev/null 2>&1
-*/5 * * * * root /var/www/html/scripts/tools/passive_check_load.pl > /dev/null 2>&1
-*/5 * * * * root /var/www/html/scripts/tools/passive_check_procs.pl > /dev/null 2>&1
-*/5 * * * * root /var/www/html/scripts/tools/passive_check_swap.pl > /dev/null 2>&1
-*/5 * * * * root /var/www/html/scripts/tools/passive_check_users.pl > /dev/null 2>&1
+# */5 * * * * root /var/www/html/scripts/tools/passive_check_disk.pl > /dev/null 2>&1
+# */5 * * * * root /var/www/html/scripts/tools/passive_check_http.pl > /dev/null 2>&1
+# */5 * * * * root /var/www/html/scripts/tools/passive_check_load.pl > /dev/null 2>&1
+# */5 * * * * root /var/www/html/scripts/tools/passive_check_procs.pl > /dev/null 2>&1
+# */5 * * * * root /var/www/html/scripts/tools/passive_check_swap.pl > /dev/null 2>&1
+# */5 * * * * root /var/www/html/scripts/tools/passive_check_users.pl > /dev/null 2>&1
 
