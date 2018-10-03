@@ -14,6 +14,9 @@ update-rc.d ssh enable
 update-rc.d corvex defaults
 update-rc.d corvex enable
 update-rc.d rpimonitord enable
+update-rc.d mysql disable
+update-rc.d ntp enable
+update-rc.d docker disable
 a2enmod rewrite
 a2enmod cgi
 a2dismod mpm_event
