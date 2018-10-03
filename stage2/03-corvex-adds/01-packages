@@ -33,3 +33,5 @@ nsca-client
 ppp
 wiringpi
 minicom
+avahi-utils
+jq
