@@ -29,6 +29,7 @@ install -m 600 userfiles/tunnel_key.pub ${ROOTFS_DIR}/home/corvex
 install -m 644 userfiles/localconfig.tmpl ${ROOTFS_DIR}/home/corvex
 install -m 644 userfiles/config.tmpl ${ROOTFS_DIR}/home/corvex
 
+install -m 755 userfiles/unifi-setup.sh ${ROOTFS_DIR}/home/corvex
 install -m 755 userfiles/provision.sh ${ROOTFS_DIR}/home/corvex
 install -m 755 userfiles/tunnel.sh ${ROOTFS_DIR}/home/corvex
 install -m 755 userfiles/90proxy ${ROOTFS_DIR}/home/corvex

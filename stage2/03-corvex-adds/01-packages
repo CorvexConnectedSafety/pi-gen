@@ -37,3 +37,4 @@ avahi-utils
 jq
 ntp
 ntpdate
+docker-compose
