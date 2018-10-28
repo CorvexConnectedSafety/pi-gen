@@ -23,7 +23,6 @@ a2dismod mpm_event
 a2enmod mpm_prefork
 cpanm -n JSON::DWIW
 cpanm -n Net::Address::IPv4::Local
-cpanm -n File::MimeInfo
 mkdir /var/www/html/scripts/logs
 chown www-data:www-data /var/www/html/scripts/logs
 EOF

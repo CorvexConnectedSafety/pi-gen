@@ -15,6 +15,7 @@ liblog-log4perl-perl
 libcgi-pm-perl
 libconfig-tiny-perl
 libhash-merge-perl
+libfile-mimeinfo-perl
 nodejs
 lsyncd
 apt-transport-https
