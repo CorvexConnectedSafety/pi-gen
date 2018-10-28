@@ -30,6 +30,7 @@ case "${1:-}" in
   start)
         echo "Starting corvex services."
         /home/corvex/tunnel.sh &
+        /var/www/html/scripts/tools/ipForwarding.sh
         /var/www/html/scripts/tools/scanUploads.sh $watchdir &
         ;;
 
