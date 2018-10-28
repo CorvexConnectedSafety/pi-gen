@@ -7,6 +7,7 @@ mkdir -p ${ROOTFS_DIR}/var/www/html/uploads
 mkdir -p ${ROOTFS_DIR}/var/www/html/objects
 mkdir -p ${ROOTFS_DIR}/var/www/html/scripts
 cp -r ${GW_SCRIPTS}/* ${ROOTFS_DIR}/var/www/html/scripts
+cp files/htaccess ${ROOTFS_DIR}/var/www/html/scripts/.htaccess
 
 on_chroot << EOF
 timedatectl set-timezone "America/Chicago"
@@ -25,6 +26,8 @@ cpanm -n JSON::DWIW
 cpanm -n Net::Address::IPv4::Local
 mkdir /var/www/html/scripts/logs
 chown www-data:www-data /var/www/html/scripts/logs
+chown www-data:www-data /var/www/html/uploads
+chown www-data:www-data /var/www/html/objects
 EOF
 
 sed ${ROOTFS_DIR}/etc/apache2/mods-enabled/mpm_prefork.conf  -i -e "s|MaxRequestWorkers.*|MaxRequestWorkers  50|"

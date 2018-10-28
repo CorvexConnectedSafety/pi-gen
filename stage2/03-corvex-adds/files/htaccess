@@ -1,0 +1,7 @@
+# Header set Access-Control-Allow-Origin "*"
+
+<FilesMatch ".*\.cgi$">
+        SetHandler perl-script
+        PerlResponseHandler ModPerl::Registry
+        Options +ExecCGI
+</FilesMatch>
