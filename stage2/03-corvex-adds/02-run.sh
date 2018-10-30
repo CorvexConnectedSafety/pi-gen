@@ -3,6 +3,7 @@
 install -m 644 files/dnsmasq.conf ${ROOTFS_DIR}/etc
 install -m 644 files/hostapd.conf ${ROOTFS_DIR}/etc/hostapd
 install -m 644 files/000-default.conf ${ROOTFS_DIR}/etc/apache2/sites-enabled
+install -m 644 files/corvex.logrotate ${ROOTFS_DIR}/etc/logrotate.d/corvex
 mkdir -p ${ROOTFS_DIR}/var/www/html/uploads
 mkdir -p ${ROOTFS_DIR}/var/www/html/objects
 mkdir -p ${ROOTFS_DIR}/var/www/html/scripts
