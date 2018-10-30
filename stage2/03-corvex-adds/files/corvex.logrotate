@@ -1,0 +1,9 @@
+/var/www/html/scripts/logs/corvex.log {
+        su www-data www-data
+        daily
+        rotate 7
+        missingok
+        notifempty
+        compress
+        nocreate
+}
