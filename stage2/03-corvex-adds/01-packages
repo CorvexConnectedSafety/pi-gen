@@ -39,3 +39,4 @@ jq
 ntp
 ntpdate
 docker-compose
+rdate
