@@ -1,0 +1,10 @@
+Header set Access-Control-Allow-Origin "*"
+
+<FilesMatch ".*\.cgi$">
+        SetHandler perl-script
+        PerlResponseHandler ModPerl::Registry
+        Options +ExecCGI
+</FilesMatch>
+
+SetOutputFilter DEFLATE
+SetEnvIfNoCase Request_URI "\.(?:gif|jpe?g|png|apk)$" no-gzip

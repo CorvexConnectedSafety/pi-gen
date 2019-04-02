@@ -1,0 +1,42 @@
+autossh
+git
+subversion
+vim-nox
+cpanminus
+apache2 libapache2-mod-perl2 
+dnsmasq
+hostapd
+inotify-tools
+libjson-perl
+libjson-xs-perl
+libdata-uuid-perl
+liblog-log4perl-perl
+libcgi-pm-perl
+libconfig-tiny-perl
+libhash-merge-perl
+libfile-mimeinfo-perl
+nodejs
+lsyncd
+apt-transport-https
+ca-certificates
+curl
+software-properties-common
+imagemagick
+libwebsockets-dev
+apt-transport-https ca-certificates dirmngr
+libssl-dev sqlite3 
+libsqlite3-dev 
+libevent-dev 
+libboost-dev 
+nagios-plugins-basic
+nsca-client
+ppp
+wiringpi
+minicom
+avahi-utils
+jq
+ntp
+ntpdate
+docker-compose
+rdate
+mariadb-client-core-10.1 mariadb-client-10.1

@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Corvex Tools</title>
+</head>
+<body>
+<ul style="font-size: 3em">
+<li>
+<a href="kiosk.apk">Kiosk app</a>
+</li>
+<li>
+<a href="corvex.apk">Corvex app</a>
+</li>
+<li>
+<a href="chrome.apk">Chrome app</a>
+</li>
+</ul>
+</body>
+</html>
