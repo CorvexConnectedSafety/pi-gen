@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# check the connection very often
+export AUTOSSH_POLL=30
 if [ -f /var/www/html/scripts/tools/config.sh ]
 then
     . /var/www/html/scripts/tools/config.sh
