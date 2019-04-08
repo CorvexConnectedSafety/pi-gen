@@ -1,6 +1,0 @@
-# create a connection to home
-/home/corvex/tunnel.sh &
-
-# set up to monitor for uploads
-/var/www/html/scripts/tools/scanUploads.sh /var/www/html/uploads &
-
