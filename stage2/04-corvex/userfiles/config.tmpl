@@ -1,5 +1,12 @@
 # set various variables
 
+# these probably shouldn't be changed
+tunnelUser=ccs
+tunnelServer=db1.corvexconnected.com
+# server that does nagios monitoring
+monitoring=nagios.corvexconnected.com
+
+# configured by the provisioning script
 subscriber=SUBSCRIBERID
 location=LOCATIONID
 gatewayName=GATEWAYNAME
@@ -9,5 +16,7 @@ backendHost=BACKENDHOST
 backendPath=BACKENDPATH
 frontendHost=FRONTENDHOST
 frontendPath=FRONTENDPATH
+
 # only set iprelay if we need to act as a gateway between networks
 iprelay=
+
