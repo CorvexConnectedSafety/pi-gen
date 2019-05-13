@@ -17,6 +17,7 @@ sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|MaxReque
 sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|\tMaxConnectionsPerChild.*|\tMaxConnectionsPerChild 100|"
 
 on_chroot << EOF
+update-rc.d bluetooth disable
 update-rc.d ssh enable
 update-rc.d corvex defaults
 update-rc.d corvex enable
