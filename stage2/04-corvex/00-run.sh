@@ -17,13 +17,8 @@ install -m 440 files/sudo ${ROOTFS_DIR}/etc/sudoers.d/020_corvex-nopasswd
 on_chroot << EOF
 locale-gen en_US.UTF-8
 update-locale LANG=en_US.UTF-8
-if ! id -u corvex >/dev/null 2>&1; then
-    adduser --disabled-password --gecos "" corvex
-fi
-echo "corvex:"$GW_PASS | chpasswd
-echo "pi:"$GW_PASS | chpasswd
 adduser corvex sudo
-mkdir /home/corvex/.ssh
+mkdir -p /home/corvex/.ssh
 chown corvex:corvex /home/corvex/.ssh
 chmod 700 /home/corvex/.ssh
 EOF
