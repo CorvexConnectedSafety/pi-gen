@@ -14,6 +14,7 @@ beHost=$4
 bePath=$5
 feHost=$6
 fePath=$7
+thisHost=$8
 
 if [ -z "$subID" -o -z "$locID" ]
 then
@@ -21,7 +22,7 @@ then
     exit 1
 fi
 
-sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/"  -e "s/GATEWAYNAME/$gwName/" < $inisrc > $initarget
+sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/"  -e "s/GATEWAYNAME/$gwName/" -e "s/IPADDRESS/$thisHost/" < $inisrc > $initarget
 sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/" -e "s/GATEWAYNAME/$gwName/" -e "s/BACKENDHOST/$beHost/" -e "s/BACKENDPATH/$bePath/" -e "s/FRONTENDHOST/$feHost/" -e "s/FRONTENDPATH/$fePath/" < $configsrc > $configtarget
 
 chmod +x $configtarget

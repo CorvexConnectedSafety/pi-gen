@@ -1,10 +1,12 @@
 */5 * * * * root /var/www/html/scripts/tools/syncObjects.sh > /dev/null 2>&1
 */5 * * * * root /var/www/html/scripts/tools/syncApp.sh > /dev/null 2>&1
 18 01 * * * root /usr/bin/rdate -cs -o 10037 localhost > /dev/null 2>&1
-# */5 * * * * root /var/www/html/scripts/tools/passive_check_disk.pl > /dev/null 2>&1
-# */5 * * * * root /var/www/html/scripts/tools/passive_check_http.pl > /dev/null 2>&1
-# */5 * * * * root /var/www/html/scripts/tools/passive_check_load.pl > /dev/null 2>&1
-# */5 * * * * root /var/www/html/scripts/tools/passive_check_procs.pl > /dev/null 2>&1
-# */5 * * * * root /var/www/html/scripts/tools/passive_check_swap.pl > /dev/null 2>&1
-# */5 * * * * root /var/www/html/scripts/tools/passive_check_users.pl > /dev/null 2>&1
-
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_disk.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_http.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_load.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_procs.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_swap.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_users.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_temp.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_mem.sh > /dev/null 2>&1
+*/5 * * * * root /usr/lib/nagios/plugins/nsca_apache.sh > /dev/null 2>&1

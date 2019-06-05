@@ -21,6 +21,7 @@ adduser corvex sudo
 mkdir -p /home/corvex/.ssh
 chown corvex:corvex /home/corvex/.ssh
 chmod 700 /home/corvex/.ssh
+rm /var/www/html/index.html
 EOF
 
 install -m 600 userfiles/tunnel_key ${ROOTFS_DIR}/home/corvex

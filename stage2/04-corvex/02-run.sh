@@ -9,6 +9,8 @@ mkdir -p ${ROOTFS_DIR}/var/www/html/objects
 mkdir -p ${ROOTFS_DIR}/var/www/html/scripts
 cp -r ${GW_SCRIPTS}/* ${ROOTFS_DIR}/var/www/html/scripts
 cp files/htaccess ${ROOTFS_DIR}/var/www/html/scripts/.htaccess
+cp -r ${GW_WEB}/* ${ROOTFS_DIR}/var/www/html
+cp -r ${GW_NAGIOS}/* ${ROOTFS_DIR}/usr/lib/nagios/plugins
 sed ${ROOTFS_DIR}/etc/apache2/apache2.conf  -i -e "s|^KeepAlive..*|KeepAlive Off|"
 sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|StartServers\t.*|StartServers\t\t  5|"
 sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|MinSpareServers\t.*|MinSpareServers\t\t  5|"
@@ -19,6 +21,7 @@ sed ${ROOTFS_DIR}/etc/ssh/sshd_config  -i -e 's|#PasswordAuthentication .*$|Pass
 
 on_chroot << EOF
 update-rc.d bluetooth disable
+update-rc.d triggerhappy disable
 update-rc.d corvex defaults
 update-rc.d corvex enable
 update-rc.d ntp enable
@@ -32,8 +35,10 @@ a2enmod mpm_prefork
 cpanm -n JSON::DWIW
 cpanm -n Net::Address::IPv4::Local
 cpanm -n DateTime DateTime::Duration
-mkdir -p /var/www/html/scripts/logs
-chown www-data:www-data /var/www/html/scripts/logs
+mkdir -p /var/log/corvex
+chown www-data:www-data /var/log/corvex
+rm -rf /var/www/html/scripts/logs
+ln -s /var/log/corvex /var/www/html/scripts/logs
 chown www-data:www-data /var/www/html/uploads
 chown www-data:www-data /var/www/html/objects
 EOF
