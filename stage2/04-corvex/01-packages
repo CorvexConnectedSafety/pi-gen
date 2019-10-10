@@ -39,4 +39,4 @@ ntp
 ntpdate
 docker-compose
 rdate
-mariadb-client-core-10.1 mariadb-client-10.1
+mariadb-client-core-10.3 mariadb-client-10.3

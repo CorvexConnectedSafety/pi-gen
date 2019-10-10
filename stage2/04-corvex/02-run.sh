@@ -35,6 +35,9 @@ a2enmod mpm_prefork
 cpanm -n JSON::DWIW
 cpanm -n Net::Address::IPv4::Local
 cpanm -n DateTime DateTime::Duration
+cpanm -f -n List::Compare
+cpanm -f -n File::Find::Rule
+cpanm -f -n Proc::Simple
 mkdir -p /var/log/corvex
 chown www-data:www-data /var/log/corvex
 rm -rf /var/www/html/scripts/logs
