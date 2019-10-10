@@ -25,13 +25,13 @@ update-rc.d triggerhappy disable
 update-rc.d corvex defaults
 update-rc.d corvex enable
 update-rc.d ntp enable
+a2dismod mpm_event
+a2dismod mpm_prefork
+a2enmod mpm_prefork
 a2enmod rewrite
 a2enmod deflate
 a2enmod cgi
 a2enmod headers
-a2dismod mpm_event
-a2dismod mpm_prefork
-a2enmod mpm_prefork
 cpanm -n JSON::DWIW
 cpanm -n Net::Address::IPv4::Local
 cpanm -n DateTime DateTime::Duration
