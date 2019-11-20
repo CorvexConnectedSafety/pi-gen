@@ -24,3 +24,5 @@ ntp
 ntpdate
 docker-compose
 rdate
+gnupg2
+pass

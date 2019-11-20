@@ -25,4 +25,5 @@ rm -rf /var/www/html/scripts/logs
 ln -s /var/log/corvex /var/www/html/scripts/logs
 chown www-data:www-data /var/www/html/uploads
 chown www-data:www-data /var/www/html/objects
+docker login -u ${REGISTRY_USER} -p ${REGISTRY_PASS} ${REGISTRY}
 EOF
