@@ -41,6 +41,17 @@ touch ./stage4/SKIP_IMAGES ./stage5/SKIP_IMAGES
 
 As 'root' execute the script ./build.sh from the top level directory.
 
+Because of some bugs, we are now building via Vagrant:
+
+Run vagrant up. It will start downloading the Virtualbox base
+image (based on Debian Buster i386) and after done, it will run the
+build.sh script of the repo. Once done, it will put the images in
+the deploy folder. If the process fails, you can run again with
+vagrant provision. vagrant destroy will delete the vm and its
+contents. The source is here:
+https://github.com/jriguera/packer-rpibuilder-vagrant so you can
+customize it and create your own Raspbian builder vm.
+
 ## Cleanup
 
 The build script creates a work directory that can get quite large.  The tree
