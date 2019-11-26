@@ -46,3 +46,11 @@ chown www-data:www-data /var/www/html/uploads
 chown www-data:www-data /var/www/html/objects
 EOF
 
+on_chroot << EOF2
+chown corvex:corvex /home/corvex/.ssh/authorized_keys
+curl --insecure -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+if [ ! -f /usr/bin/docker ] ; then
+    curl --insecure -sSL https://get.docker.com | sh
+fi
+EOF2
+

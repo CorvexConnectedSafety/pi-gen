@@ -1,4 +1,6 @@
 stage2/04-corvex/src
+.vagrant
+.vagrant/*
 deploy/*
 work/*
 config

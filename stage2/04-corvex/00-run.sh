@@ -39,15 +39,6 @@ install -m 755 userfiles/90proxy ${ROOTFS_DIR}/home/corvex
 
 install -m 664 userfiles/authorized_keys ${ROOTFS_DIR}/home/corvex/.ssh
 
-install -m 644 files/nodesource.list ${ROOTFS_DIR}/etc/apt/sources.list.d/
 install -m 644 files/interfaces ${ROOTFS_DIR}/etc/network/interfaces.d/
-
-on_chroot apt-key add - < files/nodesource.gpg.key
-on_chroot << EOF2
-chown corvex:corvex /home/corvex/.ssh/authorized_keys
-if [ -f /usr/bin/docker ] ; then
-    curl -sSL https://get.docker.com | sh
-fi
-EOF2
 
 
