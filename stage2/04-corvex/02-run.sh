@@ -21,6 +21,7 @@ sed ${ROOTFS_DIR}/etc/ssh/sshd_config  -i -e 's|#PasswordAuthentication .*$|Pass
 
 on_chroot << EOF
 update-rc.d bluetooth disable
+update-rc.d hostapd disable
 update-rc.d triggerhappy disable
 update-rc.d corvex defaults
 update-rc.d corvex enable
