@@ -15,7 +15,7 @@ sed ${ROOTFS_DIR}/etc/apache2/apache2.conf  -i -e "s|^KeepAlive..*|KeepAlive Off
 sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|StartServers\t.*|StartServers\t\t  5|"
 sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|MinSpareServers\t.*|MinSpareServers\t\t  5|"
 sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|MaxSpareServers\t.*|MaxSpareServers\t\t  10|"
-sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|MaxRequestWorkers\t.*|MaxRequestWorkers\t\t  25|"
+sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|MaxRequestWorkers\t.*|MaxRequestWorkers\t\t  50|"
 sed ${ROOTFS_DIR}/etc/apache2/mods-available/mpm_prefork.conf  -i -e "s|\tMaxConnectionsPerChild.*|\tMaxConnectionsPerChild 100|"
 sed ${ROOTFS_DIR}/etc/ssh/sshd_config  -i -e 's|#PasswordAuthentication .*$|PasswordAuthentication no|'
 
