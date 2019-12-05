@@ -56,5 +56,7 @@ if [ ! -f /usr/bin/docker ] ; then
 fi
 systemctl disable docker
 systemctl disable containerd
+curl -sfL https://get.k3s.io | sh -
+systemctl disable k3s
 EOF2
 
