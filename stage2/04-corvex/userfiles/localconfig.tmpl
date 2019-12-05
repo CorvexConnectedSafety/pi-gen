@@ -1,9 +1,11 @@
 [project]
-localCommands = uploadObject, getVersion, getObject
+localCommands = uploadObject, getVersion, getObject, initialize
 dbhost = 127.0.0.1
 dbport = 13306
-slowCommandThreshold = 2
+slowCommandThreshold = 3
 servicehost = localhost:8080
+objectRedirect = 1
+isRemote = 1
 
 [subscriber]
 subscriberid = SUBSCRIBERID
@@ -12,7 +14,6 @@ gatewayName = GATEWAYNAME
 gatewayServer = 1
 uploadPath = /var/www/html/uploads
 objectPath = /var/www/html/objects
-objectRedirect = 1
 objectBase = /objects
 logoPath = logo.png
-appUrl = http://IPADDRESS/corvex.apk
+appUrl = /corvex.apk
