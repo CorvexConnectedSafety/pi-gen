@@ -45,6 +45,7 @@ rm -rf /var/www/html/scripts/logs
 ln -s /var/log/corvex /var/www/html/scripts/logs
 chown www-data:www-data /var/www/html/uploads
 chown www-data:www-data /var/www/html/objects
+chown www-data:www-data /home/corvex/tunnel_key*
 EOF
 
 on_chroot << EOF2
@@ -53,5 +54,7 @@ curl --insecure -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-ke
 if [ ! -f /usr/bin/docker ] ; then
     curl --insecure -sSL https://get.docker.com | sh
 fi
+systemctl disable docker
+systemctl disable containerd
 EOF2
 
