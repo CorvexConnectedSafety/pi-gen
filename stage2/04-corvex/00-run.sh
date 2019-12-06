@@ -5,8 +5,8 @@ sed ${ROOTFS_DIR}/etc/locale.gen -i -e "s|# en_US.UTF-8 UTF-8|en_US.UTF-8 UTF-8|
 # sed ${ROOTFS_DIR}/etc/locale.gen -i -e "s|en_GB.UTF-8 UTF-8|# en_US.UTF-8 UTF-8|"
 sed ${ROOTFS_DIR}/etc/default/keyboard -i -e "s|gb|us|"
 sed ${ROOTFS_DIR}/etc/avahi/avahi-daemon.conf -i -e "s|workstation=no|workstation=yes|"
-sed ${ROOTFS_DIR}/etc/hosts -i -e "s|raspberrypi|CorvexGW01|"
-sed ${ROOTFS_DIR}/etc/hostname -i -e "s|raspberrypi|CorvexGW01|"
+sed ${ROOTFS_DIR}/etc/hosts -i -e "s|rpibuilder|CorvexGW01|"
+sed ${ROOTFS_DIR}/etc/hostname -i -e "s|rpibuilder|CorvexGW01|"
 
 # enable i2c
 sed ${ROOTFS_DIR}/boot/config.txt -i -e "s|#dtparam=i2c_arm=on|dtparam=i2c_arm=on|"

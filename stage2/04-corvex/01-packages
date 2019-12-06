@@ -1,9 +1,9 @@
+systemd
 autossh
 git
 subversion
 vim-nox
 cpanminus
-apache2 libapache2-mod-perl2 
 dnsmasq
 hostapd
 inotify-tools
@@ -15,8 +15,7 @@ libcgi-pm-perl
 libconfig-tiny-perl
 libhash-merge-perl
 libfile-mimeinfo-perl
-nodejs
-lsyncd
+apache2 libapache2-mod-perl2 
 apt-transport-https
 ca-certificates
 curl
@@ -24,7 +23,6 @@ gnupg-agent
 software-properties-common
 imagemagick
 libwebsockets-dev
-apt-transport-https ca-certificates dirmngr
 libssl-dev sqlite3 
 libsqlite3-dev 
 libevent-dev 
