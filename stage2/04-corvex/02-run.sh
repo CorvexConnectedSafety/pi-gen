@@ -9,6 +9,7 @@ mkdir -p ${ROOTFS_DIR}/var/www/html/objects
 mkdir -p ${ROOTFS_DIR}/var/www/html/scripts
 cp -r ${GW_SCRIPTS}/* ${ROOTFS_DIR}/var/www/html/scripts
 cp files/htaccess ${ROOTFS_DIR}/var/www/html/scripts/.htaccess
+cp files/object_htaccess ${ROOTFS_DIR}/var/www/html/objects/.htaccess
 cp -r ${GW_WEB}/* ${ROOTFS_DIR}/var/www/html
 cp -r ${GW_NAGIOS}/* ${ROOTFS_DIR}/usr/lib/nagios/plugins
 sed ${ROOTFS_DIR}/etc/apache2/apache2.conf  -i -e "s|^KeepAlive..*|KeepAlive Off|"
