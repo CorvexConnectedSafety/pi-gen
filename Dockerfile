@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM i386/debian:buster
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -12,3 +12,4 @@ RUN apt-get -y update && \
 COPY . /pi-gen/
 
 VOLUME [ "/pi-gen/work", "/pi-gen/deploy"]
+

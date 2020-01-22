@@ -56,15 +56,22 @@ chown corvex:corvex /home/corvex/.ssh/authorized_keys
 NEOF
 else
     on_chroot << CEOF
+systemctl disable apache2
 curl --insecure -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 if [ ! -f /usr/bin/docker ] ; then
     curl --insecure -sSL https://get.docker.com | sh
 fi
-systemctl disable docker
-systemctl disable containerd
-mkdir /run/systemd
-chmod 755 /run/systemd
-curl -sfL https://get.k3s.io | sh -
-systemctl disable k3s
+if [ ! -d /run/systemd ] ; then
+    mkdir -p /run/systemd ;
+    chmod 755 /run/systemd ;
+    curl -sfL https://get.k3s.io | sh - ;
+    systemctl disable k3s ;
+fi
+# docker pull memcached:latest
+# docker pull registry:2
+if [ ! -z "${REGISTRY}" ] ; then
+    # docker login -u ${REG_USER} -p ${REG_PASS} ${REGISTRY}; 
+    # docker pull registry.gitlab.com/corvexconnected/rest-api:arm-latest
+fi
 CEOF
 fi
