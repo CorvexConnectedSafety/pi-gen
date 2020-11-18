@@ -1,0 +1,4 @@
+Host ccsgitlab
+    Hostname gitlab.com
+    IdentityFile /home/corvex/.ssh/gitlab
+    IdentitiesOnly yes

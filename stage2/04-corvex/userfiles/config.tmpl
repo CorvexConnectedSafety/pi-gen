@@ -1,16 +1,30 @@
 # set various variables
 
+# where are the scripts
+scriptDir=/usr/local/apache2/htdocs/
+objectDir=/usr/local/apache2/objects/
+uploadDir=/usr/local/apache2/uploads/
+staticDir=/usr/local/apache2/static/
+
+
 # these probably shouldn't be changed
 tunnelUser=ccs
-tunnelServer=db1.corvexconnected.com
+tunnelServer=relay.corvexconnected.com
+# users for the database connection
+dbUser=ccsadmin
+dbServer=db1.corvexconnected.com
+
 # server that does nagios monitoring
 monitoring=monitoring.corvexconnected.com
+
+# server that does log capturing
+logging=https://logsin:DtzmNQfHY2WiuR8eKAdWZpwP@172.18.0.1:7443/loki/api/v1/push
 
 # configured by the provisioning script
 subscriber=SUBSCRIBERID
 location=LOCATIONID
 gatewayName=GATEWAYNAME
-port=10022
+port=443
 watchdir=/var/www/html/uploads
 backendHost=BACKENDHOST
 backendPath=BACKENDPATH

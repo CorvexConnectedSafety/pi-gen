@@ -1,19 +1,40 @@
 [project]
+# allLocal = 1
+# use this when running standalone
 localCommands = uploadObject, getVersion, getObject, initialize
-dbhost = 127.0.0.1
+# this is the setup for when running as a container when the tunnel is on the host
+dbhost = 172.18.0.1
 dbport = 13306
 slowCommandThreshold = 3
-servicehost = localhost:8080
+servicehost = 172.18.0.1:8088
 objectRedirect = 1
 isRemote = 1
+
+memcachedServer = 172.18.0.1:11211
+useMemcached = 1
+cacheSubqueries = 1
+useCalculateScores = 1
 
 [subscriber]
 subscriberid = SUBSCRIBERID
 locationid = LOCATIONID
 gatewayName = GATEWAYNAME
 gatewayServer = 1
-uploadPath = /var/www/html/uploads
-objectPath = /var/www/html/objects
+isGateway = 1
+uploadPath = /usr/local/apache2/htdocs/uploads/
+objectPath = /usr/local/apache2/htdocs/objects/
 objectBase = /objects
-logoPath = logo.png
-appUrl = /corvex.apk
+logoPath = /static/logo.png
+appUrl = /static/corvex.apk
+useCloudStorage = 0
+externalNotifications = 0
+emailNotifications = 0
+pushNotifications = 0
+smsNotifications = 0
+allowObservationUserAnyDevice = 0
+multiLocationSupport = 1
+captureBeaconActivity = 0
+captureDeviceActivity = 0
+# subscriberid should be set in localconfig.ini
+# locationid should be set in localconfig.ini; if multiLocationSupport is set then locationid can be a comma separate list
+# if there are multiple locationids, then there must also be a primarylocationid property

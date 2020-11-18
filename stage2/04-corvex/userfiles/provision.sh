@@ -2,9 +2,9 @@
 #
 # usage: provision.sh subID locID
 
-initarget=/var/www/html/scripts/localconfig.ini
+initarget=/home/corvex/localconfig.ini
 inisrc=/home/corvex/localconfig.tmpl
-configtarget=/var/www/html/scripts/tools/config.sh
+configtarget=/home/corvex/config.sh
 configsrc=/home/corvex/config.tmpl
 
 subID=$1
@@ -24,7 +24,10 @@ fi
 
 sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/"  -e "s/GATEWAYNAME/$gwName/" -e "s/IPADDRESS/$thisHost/" < $inisrc > $initarget
 sed -e "s/SUBSCRIBERID/$subID/" -e "s/LOCATIONID/$locID/" -e "s/GATEWAYNAME/$gwName/" -e "s/BACKENDHOST/$beHost/" -e "s/BACKENDPATH/$bePath/" -e "s/FRONTENDHOST/$feHost/" -e "s/FRONTENDPATH/$fePath/" < $configsrc > $configtarget
+sed -e "s/GATEWAYNAME/$gwName/" < promtail.yml.tmpl > promtail.yml
 
 chmod +x $configtarget
+
+cp corvex.service /etc/avahi/services
 
 echo "Configuration updated"

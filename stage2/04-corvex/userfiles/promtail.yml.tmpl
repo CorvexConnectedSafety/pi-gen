@@ -1,0 +1,25 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+    - url: https://logsin:DtzmNQfHY2WiuR8eKAdWZpwP@172.18.0.1:10443/loki/api/v1/push
+    batchsize: 65536
+
+scrape_configs:
+ - job_name: containers
+   entry_parser: docker
+   file_sd_configs:
+   - files:
+     - /home/corvex/promtail-targets.yaml
+   relabel_configs:
+   - source_labels: [job]
+     target_label: "GATEWAYNAME"
+   - source_labels: [__address__]
+     target_label: container_id
+   - source_labels: [container_id]
+     target_label: __path__
+     replacement: /var/docker/containers/$1*/*.log
