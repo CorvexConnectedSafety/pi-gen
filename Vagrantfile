@@ -2,7 +2,7 @@ $run = <<"SCRIPT"
 echo ">>> Generating rpi image ... $@"
 export DEBIAN_FRONTEND=noninteractive
 export RPIGEN_DIR="${1:-/home/vagrant/rpi-gen}"
-export APT_PROXY='http://127.0.0.1:3142' 
+export APT_PROXY='http://192.168.2.169:3142' 
 # Prepare. Copy the repo to another location to run as root
 rsync -a --delete --exclude 'work' --exclude 'deploy' /vagrant/  ${RPIGEN_DIR}/
 cd ${RPIGEN_DIR}
